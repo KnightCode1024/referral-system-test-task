@@ -1,0 +1,329 @@
+{
+  "info": {
+    "name": "Snippets API",
+    "description": "API for user profiles and verification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Profile",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{auth_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "/profile/",
+              "host": [
+                ""
+              ],
+              "path": [
+                "profile",
+                ""
+              ]
+            },
+            "description": "Get user profile information"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic {{auth_token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "/profile/",
+                  "path": [
+                    "profile",
+                    ""
+                  ]
+                }
+              },
+              "code": 200,
+              "body": "{\n    \"phone\": \"string\",\n    \"invite_code\": \"string\",\n    \"activated_invite\": \"string\",\n    \"referred_users\": \"string\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Profile (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{auth_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"activated_invite\": \"string\"\n}"
+            },
+            "url": {
+              "raw": "/profile/",
+              "host": [
+                ""
+              ],
+              "path": [
+                "profile",
+                ""
+              ]
+            },
+            "description": "Update profile information"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic {{auth_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"activated_invite\": \"string\"\n}"
+                },
+                "url": {
+                  "raw": "/profile/",
+                  "path": [
+                    "profile",
+                    ""
+                  ]
+                }
+              },
+              "code": 200,
+              "body": "{\n    \"phone\": \"string\",\n    \"invite_code\": \"string\",\n    \"activated_invite\": \"string\",\n    \"referred_users\": \"string\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Partial Update Profile (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{auth_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"activated_invite\": \"string\"\n}"
+            },
+            "url": {
+              "raw": "/profile/",
+              "host": [
+                ""
+              ],
+              "path": [
+                "profile",
+                ""
+              ]
+            },
+            "description": "Partially update profile information"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic {{auth_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"activated_invite\": \"string\"\n}"
+                },
+                "url": {
+                  "raw": "/profile/",
+                  "path": [
+                    "profile",
+                    ""
+                  ]
+                }
+              },
+              "code": 200,
+              "body": "{\n    \"phone\": \"string\",\n    \"invite_code\": \"string\",\n    \"activated_invite\": \"string\",\n    \"referred_users\": \"string\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Send Code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{auth_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"string\"\n}"
+            },
+            "url": {
+              "raw": "/send-code/",
+              "host": [
+                ""
+              ],
+              "path": [
+                "send-code",
+                ""
+              ]
+            },
+            "description": "Send verification code to phone"
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic {{auth_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"string\"\n}"
+                },
+                "url": {
+                  "raw": "/send-code/",
+                  "path": [
+                    "send-code",
+                    ""
+                  ]
+                }
+              },
+              "code": 201,
+              "body": "{\n    \"phone\": \"string\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Verify Code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{auth_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"string\",\n    \"token\": \"stri\"\n}"
+            },
+            "url": {
+              "raw": "/verify-code/",
+              "host": [
+                ""
+              ],
+              "path": [
+                "verify-code",
+                ""
+              ]
+            },
+            "description": "Verify phone with received code"
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic {{auth_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"string\",\n    \"token\": \"stri\"\n}"
+                },
+                "url": {
+                  "raw": "/verify-code/",
+                  "path": [
+                    "verify-code",
+                    ""
+                  ]
+                }
+              },
+              "code": 201,
+              "body": "{\n    \"phone\": \"string\",\n    \"token\": \"stri\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_token",
+      "value": "your_auth_token_here",
+      "type": "string"
+    }
+  ]
+}
